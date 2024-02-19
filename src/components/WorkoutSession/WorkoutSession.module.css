@@ -1,0 +1,136 @@
+.workoutSession {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  min-height: 80vh;
+  position: relative;
+}
+
+.filler {
+  flex-grow: 1;
+}
+
+.workoutSession h1 {
+  font-family: "Unbounded", sans-serif;
+}
+
+.workoutSession h2 {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.carousel {
+  padding-top: 2rem;
+  padding-left: 3rem;
+  display: flex;
+  overflow-x: scroll;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 50vw;
+  padding-block: 5rem;
+  padding-inline: 1rem;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: 2px solid black;
+
+  background-color: #adff00;
+}
+
+@media (min-width:700px) {
+  .activity {
+    min-width: 20vw;
+  } 
+}
+
+.activity p {
+  font-weight: 500;
+}
+
+.number {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 700 !important;
+}
+
+.status {
+  width: calc(100%-2rem);
+  border: 2px solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 0.5rem;
+}
+
+.status p {
+  font-family: "Unbounded", sans-serif;
+}
+
+.stat,
+.sets {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.sets {
+  background-color: #adff00;
+  padding-inline: 1rem;
+  border-radius: 1rem;
+}
+
+.workoutSession button {
+  background-color: white;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  border: 2px solid black;
+  margin-bottom: 0.5rem;
+}
+
+.next {
+  background-color: #adff00 !important;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+  gap: 2rem;
+
+  text-align: center;
+}
+
+.flexButtons {
+  display: flex;
+  width: 100%;
+  gap: 0.25rem;
+}
+
+.flexButtons button {
+  font-family: "Unbounded", sans-serif;
+  padding: 1rem;
+  background-color: red;
+  border: 1px solid red;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.cancel {
+  flex-grow: 1;
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid black !important;
+}

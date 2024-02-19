@@ -1,0 +1,34 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.651);
+}
+
+.modalOverlay {
+  position: fixed;
+  bottom: 50%;
+  right: 50%;
+  transform: translateX(50%) translateY(50%);
+  z-index: 21;
+
+  height: fit-content;
+  max-height: 50vh;
+  min-height: 20vh;
+  overflow-y: auto;
+  border-radius: 1rem;
+
+  width: 80vw;
+
+  background-color: white;
+}
+
+@media (min-width: 700px) {
+  .modalOverlay {
+    width: fit-content;
+  }
+}

@@ -1,0 +1,46 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+.home h1 {
+}
+
+.home p {
+  font-weight: 500;
+}
+
+.workoutList {
+  list-style: none;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.allButton, .workoutList button {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 500;
+  display: flex;
+
+  background-color: #ADFF00;
+
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid black
+}
+
+.allButton {
+  background-color: white;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.library {
+  font-family: "Poppins", sans-serif;
+}
+
+.libButton {
+  background-color: white !important;
+}
