@@ -13,29 +13,35 @@ const WorkoutStats = (props) => {
   );
 
   useEffect(() => {
+      // Calcul de la moyenne de la durée des entraînements
     const durationAvg =
       workoutHistory.length > 0
         ? workoutHistory.reduce((a, b) => a + b.duration, 0) /
           workoutHistory.length
         : 0;
 
+// Calcul de la moyenne du nombre de séries des entraînements
     const setsAvg =
       workoutHistory.length > 0
         ? workoutHistory.reduce((a, b) => a + b.sets, 0) / workoutHistory.length
         : 0;
 
-    let leastTime = 100000000;
-    let mostSets = 0;
+// Initialisation des valeurs minimales et maximales
+    let leastTime = 100000000; // Valeur arbitrairement grande pour initialiser la variable
+    let mostSets = 0; // Valeur initiale minimale pour les séries
 
+// Parcours de chaque élément de l'historique des entraînements
     workoutHistory.forEach((itm) => {
+   // Mise à jour de la durée minimale
       if (itm.duration < leastTime) {
         leastTime = itm.duration;
       }
+   // Mise à jour du nombre de séries maximum
       if (itm.sets > mostSets) {
         mostSets = itm.sets;
       }
     });
-
+   // Mise à jour de l'état avec les résultats des calculs
     setData({
       durationAvg: durationAvg,
       setsAvg: setsAvg,
@@ -45,24 +51,24 @@ const WorkoutStats = (props) => {
   }, []);
 
   if (workoutHistory.length < 1) {
-    return <div>No History Found</div>;
+    return <div>Pas d'historique trouvé</div>;
   }
 
   return (
     <div className={styles.workoutStats}>
-      <h1>Workout Stats</h1>
-      <h2>{workout.name}</h2>
+      <h1>Statistique d'entrainement</h1>
+      <h2>{workout?.name}</h2>
 
       <div className={styles.chart}>
         <Chart data={workoutHistory.reverse()} />
       </div>
 
       <div className={styles.stats}>
-        <p>Total Number Of Workout History: {workoutHistory.length}</p>
-        <p>Most Sets: {data.mostSets}</p>
-        <p>Most Recent Activity: {workoutHistory[0].date}</p>
-        <p>Average Duration: {data.durationAvg}</p>
-        <p>Average Sets: {data.setsAvg}</p>
+        <p>Nombre total d'historique d'entrainement: {workoutHistory.length}</p>
+        <p>nombre de séries maximal : {data.mostSets}</p>
+        <p>Activité la plus récente: {workoutHistory[0].date}</p>
+        <p>Durée moyenne: {data.durationAvg}</p>
+        <p>la moyenne du nombre de séries des entraînements: {data.setsAvg}</p>
       </div>
     </div>
   );

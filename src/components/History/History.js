@@ -42,27 +42,27 @@ const History = (props) => {
               <h2>{selectedAct.wName}</h2>
             </div>
             <p>Date: {selectedAct.date}</p>
-            <p>Total Sets: {selectedAct.sets}</p>
-            <p>Duration: {selectedAct.duration}</p>
+            <p>Total de series: {selectedAct.sets}</p>
+            <p>Durée: {selectedAct.duration}</p>
 
-            <button
-              onClick={() => {
-                deleteHistoryHandler(selectedAct.id);
-              }}
-            >
-              Delete Activity
-            </button>
             <button
               onClick={() => {
                 props.changeView("sta" + selectedAct.workoutId);
               }}
             >
-              See Workout Stats
+              Voir les statistiques d&apos;entrainement
+            </button>
+            <button
+              onClick={() => {
+                deleteHistoryHandler(selectedAct.id);
+              }}
+            >
+             supprimer cette activité
             </button>
           </div>
         </Modal>
       )}
-      <h1>History</h1>
+      <h1>Historique</h1>
 
       <select
         value={historyClass}
@@ -70,11 +70,11 @@ const History = (props) => {
           setHistoryClass(e.target.value);
         }}
       >
-        <option value="All">All</option>
+        <option value="All">Tout</option>
         {library.map((itm) => {
           return (
             <option key={itm.id} value={itm.id}>
-              {itm.name}
+              {itm?.name}
             </option>
           );
         })}
@@ -84,7 +84,7 @@ const History = (props) => {
         {historySnip.map((itm) => {
           const workoutName = library.find((wor) => {
             return wor.id == itm.workoutId;
-          }).name;
+          })?.name;
 
           return (
             <button

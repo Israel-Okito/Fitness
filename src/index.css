@@ -9,10 +9,10 @@
 
 body {
   position: relative;
-  min-height: 98vh;
-
+  /* min-height: 98vh; */
+/* 
   padding-bottom: 10rem;
-  padding-top: 2rem;
+  padding-top: 2rem; */
 }
 
 .floatingB {
@@ -84,11 +84,13 @@ body {
 }
 
 .container {
-  max-width: 700px;
-  margin-inline: auto;
-  padding-top: 3rem;
+  /* max-width: 700px;
+  margin-inline: auto; */
+  padding-top: 1.5rem;
+  margin-left: 50px;
+  margin-right: 50px;
   padding-inline: 1.2rem;
-  position: relative;
+  /* position: relative; */
 }
 
 .flex {
@@ -108,4 +110,22 @@ body {
 .header button {
   background: none !important;
   border: none !important;
+}
+
+
+
+.hero-banner-img {
+  /* position: absolute;
+  right: 40px;
+  top: 0px; */
+  width: 580px;
+  height: 580px;
+  /* margin-top: -330px; */
+  border-radius: 10px;
+}
+
+@media(max-width:420px){
+  .TypeAnimation{
+    display: none;
+  }
 }

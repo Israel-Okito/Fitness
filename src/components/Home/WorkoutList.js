@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./Home.module.css";
 import { useSelector } from "react-redux";
+import { Button } from "@mui/material";
 
 const WorkoutList = (props) => {
   const library = useSelector((state) => state.workout_library);
 
   return (
     <>
-      <ul className={styles.workoutList}>
+      {/* <ul className={styles.workoutList}>
         {library.length < 4 && (
           <>
             {library.map((itm) => (
@@ -37,15 +38,17 @@ const WorkoutList = (props) => {
             ))}
           </>
         )}
-      </ul>
-      <button
-        className={styles.allButton}
+      </ul> */}
+      
+      <Button
+        // className={styles.allButton}
+        style={{  textDecoration: 'none',  textAlign: 'center', background: '#FF2625',  fontSize: '15px', textTransform: 'none', color: 'white', borderRadius: '4px' }}
         onClick={() => {
           props.changeView("Library");
         }}
       >
-        All Workouts
-      </button>
+       Voir  tout les objectifs
+      </Button>
     </>
   );
 };

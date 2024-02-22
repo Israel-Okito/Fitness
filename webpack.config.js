@@ -20,6 +20,7 @@ module.exports = {
     },
     resolve: {
         extensions: [".js", ".jsx", ".json"],
+     
     },
     module: {
         rules: [
@@ -32,6 +33,20 @@ module.exports = {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
             },
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]', // Garde le nom du fichier d'origine
+                      outputPath: 'assets/', // Place les images dans le dossier "assets" à la racine de la sortie
+                     
+                    },
+                  },
+                ],
+              },
+
         ],
     },
     plugins: [

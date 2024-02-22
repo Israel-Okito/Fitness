@@ -8,7 +8,7 @@ const Library = (props) => {
 
   return (
     <div className={styles.library}>
-      <h1>Library</h1>
+      <h1>Liste de tes objectifs</h1>
 
       <div className={styles.workoutList}>
         <button
@@ -16,7 +16,7 @@ const Library = (props) => {
             props.changeView("Create Workout");
           }}
         >
-          Create Workout
+          saisir un entrainement
         </button>
         {library.map((itm) => (
           <button

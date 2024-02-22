@@ -7,7 +7,7 @@ const Chart = (props) => {
     labels: props.data.map((itm) => itm.date),
     datasets: [
       {
-        label: "No. Of Sets",
+        label: "No. de series",
         data: props.data.map((itm) => itm.sets),
         fill: "start",
 

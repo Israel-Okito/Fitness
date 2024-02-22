@@ -20,6 +20,15 @@
   font-family: "Poppins", sans-serif;
 }
 
+.inputField select {
+  padding: 0.25rem;
+  width: 20%;
+  border-radius: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
 .inputField label {
   font-weight: bold;
 }

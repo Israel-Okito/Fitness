@@ -31,7 +31,7 @@ const WorkoutSession = (props) => {
 
   const handleEndWorkout = () => {
     handleStopwatch();
-    props.changeView("Home");
+    props.changeView("Library");
     // const day = new Date().getDate();
     // const month = new Date().getMonth() + 1;
     // const year = new Date().getFullYear();
@@ -64,16 +64,16 @@ const WorkoutSession = (props) => {
       {endModal && (
         <Modal>
           <div className={styles.modal}>
-            Are you sure you want to end this workout?
+          Êtes-vous sûr de vouloir mettre fin à cet entraînement?
             <div className={styles.flexButtons}>
-              <button onClick={handleEndWorkout}>End Workout</button>
+              <button onClick={handleEndWorkout}>Mettre fin de l'entraînement</button>
               <button
                 onClick={() => {
                   setEndModal(false);
                 }}
                 className={styles.cancel}
               >
-                Cancel
+                Annuler
               </button>
             </div>
           </div>
@@ -81,7 +81,7 @@ const WorkoutSession = (props) => {
       )}
 
       <div className={styles.filler}></div>
-      <h1>Workout</h1>
+      <h1>Entrainement</h1>
       <h2>{workout.name}</h2>
       <div className={styles.carousel}>
         {workout.activities.map((itm) => (
@@ -93,7 +93,7 @@ const WorkoutSession = (props) => {
       </div>
       <div className={styles.status}>
         <p>
-          Set <span className={styles.sets}>{sets}</span>
+          Serie <span className={styles.sets}>{sets}</span>
         </p>
         <p>
           <span className={styles.stat}>{formatTime(timeElapsed)}</span>
@@ -105,7 +105,7 @@ const WorkoutSession = (props) => {
           setEndModal(true);
         }}
       >
-        End Workout
+        Terminer la séance d'entrainement
       </button>
       <button
         className={styles.next}
@@ -113,7 +113,7 @@ const WorkoutSession = (props) => {
           setSets((prev) => prev + 1);
         }}
       >
-        Next Set
+        Serie suivante
       </button>
     </div>
   );

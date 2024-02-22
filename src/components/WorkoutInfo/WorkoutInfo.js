@@ -21,7 +21,7 @@ const WorkoutInfo = (props) => {
       : 0;
 
   const deleteWorkoutHandler = () => {
-    props.changeView("Home");
+    props.changeView("Library");
     dispatch({ type: "DELETE_WORKOUT_FROM_LIBRARY", payload: props.workoutId });
   };
 
@@ -31,17 +31,17 @@ const WorkoutInfo = (props) => {
       {delWorkModal && (
         <Modal>
           <div className={styles.modal}>
-            Are you sure you want to delete this workout?
+          Êtes-vous sûr de supprimer cette séance  d'entrainement?
             <div className={styles.flexBut}>
               <button onClick={deleteWorkoutHandler} className={styles.delete}>
-                Delete Workout
+                Supprimer l'entrainement
               </button>
               <button
                 onClick={() => {
                   setDelWorkModal(false);
                 }}
               >
-                Cancel
+                Annuler
               </button>
             </div>
           </div>
@@ -69,11 +69,11 @@ const WorkoutInfo = (props) => {
       <div className={styles.history}>
         <div>
           <h2>{recentReps}</h2>
-          <p>Recent Sets</p>
+          <p>Séries Récentes</p>
         </div>
         <div>
           <h2>{workoutAvg.toFixed(2)}</h2>
-          <p>Avg. Minutes</p>
+          <p>Moyenne Minutes</p>
         </div>
       </div>
       <div className={styles.flex}>
@@ -83,7 +83,7 @@ const WorkoutInfo = (props) => {
           }}
           className={styles.hisButton}
         >
-          History
+          Historique
         </button>
 
         <button
@@ -92,7 +92,7 @@ const WorkoutInfo = (props) => {
           }}
           className={styles.startButton}
         >
-          Start Workout
+          commencer la séance d'entrainement
         </button>
         <div className={styles.flexer}>
           <button
@@ -101,7 +101,7 @@ const WorkoutInfo = (props) => {
               setDelWorkModal(true);
             }}
           >
-            Delete Workout
+            supprimer l'entrainement
           </button>
           <button
             className={styles.editButton}
@@ -109,7 +109,7 @@ const WorkoutInfo = (props) => {
               props.changeView("ewo" + props.workoutId);
             }}
           >
-            Edit Workout
+            modifier l'entrainement
           </button>
         </div>
       </div>

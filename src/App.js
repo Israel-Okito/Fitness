@@ -10,6 +10,10 @@ import EditWorkout from "./components/Edit/EditWorkout";
 import WorkoutInfo from "./components/WorkoutInfo/WorkoutInfo";
 import WorkoutSession from "./components/WorkoutSession/WorkoutSession";
 import WorkoutStats from "./components/WokoutStats/WorkoutStats";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import HeroBanner from "./components/HeroBanner";
+import { Box } from "@mui/material";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -41,13 +45,18 @@ export default function App() {
   }, [history]);
 
   return (
-    <>
+
+    <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
+       
+        <>
       {view.substring(0, 3) !== "wss" && (
-        <FloatingButtons changeView={(view) => setView(view)} />
+        
+        <Navbar changeView={(view) => setView(view)} />
+        // <FloatingButtons changeView={(view) => setView(view)} />
       )}
       <div className="container">
         {view === "Home" && (
-          <Home
+          <HeroBanner
             changeView={(view) => {
               setView(view);
             }}
@@ -108,6 +117,11 @@ export default function App() {
           <WorkoutStats workoutId={view.substring(3)} />
         )}
       </div>
-    </>
+        </>
+
+       {/* <Footer/>
+       */}
+     </Box>
+
   );
 }

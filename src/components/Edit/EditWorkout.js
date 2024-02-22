@@ -81,16 +81,33 @@ const EditWorkout = (props) => {
         });
       }
 
-      props.changeView("Home");
+      props.changeView("Library");
     }
   };
+  
+  
+  const namedefaultactivity = [
+   {
+    
+    name:"c",
+   },
+   {
+    
+    name:"a",
+   },
+   {
+    
+    name:"b",
+   }
+    
+  ]
 
   return (
     <div className={styles.editWork}>
-      <h1>{props.workoutId === "New" ? "New Workout" : "Edit Workout"}</h1>
+      <h1>{props.workoutId === "New" ? "Nouveau entrainement" : "modifier l'entrainement"}</h1>
       <form onSubmit={formSubmitHandler}>
         <div className={styles.inputField}>
-          <label>Name</label>
+          <label>Nom de l'entrainement</label>
           <input
             type="text"
             value={data.name}
@@ -120,8 +137,8 @@ const EditWorkout = (props) => {
         {newActivityField && (
           <div className={styles.newActField}>
             <div className={styles.inputField}>
-              <label>Activity: </label>{" "}
-              <input
+              <label>Activité: </label>{" "}
+              {/* <input
                 type="Reps"
                 value={newActivityData.name}
                 onChange={(e) => {
@@ -129,8 +146,30 @@ const EditWorkout = (props) => {
                     return { ...prev, name: e.target.value };
                   });
                 }}
-              />
+              /> */}
+
+            <select
+              type="Reps"
+              value={newActivityData.name}
+              onChange={(e) => {
+                setNewActivityData((prev) => {
+                  return { ...prev, name: e.target.value };
+                });
+              }}
+           >
+            <option  value="All" >choisir</option>
+             {namedefaultactivity.map((itm) => {
+                  return (
+             <option key={itm.id} value={itm.id}>
+                {itm?.name}
+              </option>
+             );
+          })}
+           </select>
             </div>
+
+         
+
             <div className={styles.inputField}>
               <label>Reps: </label>{" "}
               <input
@@ -143,16 +182,17 @@ const EditWorkout = (props) => {
                 }}
               />
             </div>
+            
             <div className={styles.flexButtons}>
               <button
                 onClick={() => {
                   setNewActivityField(false);
                 }}
               >
-                Cancel
+                Annuler
               </button>
               <button type="button" onClick={addActivity}>
-                Add
+                Ajouter
               </button>
             </div>
           </div>
@@ -165,11 +205,11 @@ const EditWorkout = (props) => {
             }}
             className={styles.activityButton}
           >
-            Add Activity
+            Ajouter une activité
           </button>
         )}
         <button type="submit" className={styles.createButton}>
-          {props.workoutId === "New" ? "Create Workout" : "Edit Workout"}
+          {props.workoutId === "New" ? "Confirmer la création d'un entrainement" : "confirmer la modification d'un entrainement"}
         </button>
         <button
           type="reset"
@@ -178,7 +218,7 @@ const EditWorkout = (props) => {
             props.changeView("Home");
           }}
         >
-          Cancel
+          Annuler
         </button>
       </form>
     </div>
