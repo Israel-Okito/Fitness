@@ -8,6 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, "./dist"),
         filename: "index_bundle.js",
     },
+   
     target: "web",
     devServer: {
         port: "5000",
@@ -52,6 +53,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "public", "index.html"),
+            outputPath: 'build', // Spécifie le répertoire de sortie pour le fichier HTML généré
         }),
     ],
 };
