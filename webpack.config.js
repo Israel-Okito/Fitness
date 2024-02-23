@@ -53,7 +53,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "public", "index.html"),
-            outputPath: 'build', // Spécifie le répertoire de sortie pour le fichier HTML généré
+            // outputPath: 'build', // Spécifie le répertoire de sortie pour le fichier HTML généré
         }),
     ],
 };
