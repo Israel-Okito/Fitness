@@ -59,9 +59,13 @@ const WorkoutInfo = (props) => {
       </div>
       <div className={styles.activities}>
         {workout.activities.map((itm) => (
-          <div className={styles.activity} key={itm.id}>
-            <div className={styles.number}>{itm.reps}</div>
-            <div className={styles.name}>{itm.name}</div>
+          <div className={styles.activitiesContainer}  key={itm.id}>
+            <div className={styles.activity}>
+              <div className={styles.number}>{itm.reps}</div>
+              <div className={styles.name}>{itm.name}</div>
+            </div>
+          
+              <img src={itm.image} alt="sport" width={350} height={280}/>
           
           </div>
         ))}

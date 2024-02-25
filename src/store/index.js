@@ -1,37 +1,32 @@
 import { createStore } from "redux";
+import img from "../assets/joel5.jpg";
 
 const initial_state = {
   workout_library: [
-    {
-      id: 1,
-      name: "Boxing Ex1",
-      activities: [
-        { id: 1, name: "Push Ups", reps: 4 },
-        { id: 2, name: "Pull Ups", reps: 4 },
-        { id: 3, name: "Squats", reps: 6 },
-        { id: 4, name: "Dips", reps: 8 },
-      ],
-    },
-    {
-      id: 2,
-      name: "Upper Body",
-      activities: [
-        { id: 1, name: "Push Ups", reps: 4 },
-        { id: 2, name: "Pull Ups", reps: 4 },
-        { id: 3, name: "Squats", reps: 6 },
-        { id: 4, name: "Dips", reps: 8 },
-      ],
-    },
-    {
-      id: 3,
-      name: "Weight Training",
-      activities: [
-        { id: 1, name: "Push Ups", reps: 4 },
-        { id: 2, name: "Pull Ups", reps: 4 },
-        { id: 3, name: "Squats", reps: 6 },
-        { id: 4, name: "Dips", reps: 8 },
-      ],
-    },
+    // {
+    //   id: 1,
+    //   name: "Boxing Ex1",
+    //   activities: [
+    //     { id: 1, name: "Push Ups", reps: 4, image:img },
+    //     { id: 2, name: "Pull Ups", reps: 4, image:img },
+    //   ],
+    // },
+    // {
+    //   id: 2,
+    //   name: "Upper Body",
+    //   activities: [
+    //     { id: 1, name: "Push Ups", reps: 4, image:img },
+    //     { id: 2, name: "Pull Ups", reps: 4, image:img },
+    //   ],
+    // },
+    // {
+    //   id: 3,
+    //   name: "Weight Training",
+    //   activities: [
+    //     { id: 1, name: "Push Ups", reps: 4, image:img },
+    //     { id: 2, name: "Pull Ups", reps: 4, image:img },
+    //   ],
+    // },
   ],
   workout_history: [
     // { id: 1, workoutId: 1, duration: 33, sets: 5, date: "1/1/2010" },

@@ -21,9 +21,9 @@ const HeroBanner = (props) => {
            Découvrez les exercices les plus efficaces personnalisés pour vous
            </Typography>
            <Stack mt="30px">
-             <div >
+             
                <WorkoutList changeView={props.changeView}/>
-             </div>
+           
            </Stack>
            <Typography className='TypeAnimation' fontWeight={600} color="#FF2625" sx={{ opacity: '0.1', display:{lg:"block"} , fontSize: '80px', mt:"50px" }}>
           

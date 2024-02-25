@@ -11,8 +11,8 @@
 
 .activities {
   margin-top: 1rem;
-  padding: 1rem;
-  padding-block: 3rem;
+  padding: 0.3rem;
+  /* padding-block: 3rem; */
   border-radius: 1rem;
   border: 2px solid black;
 
@@ -20,6 +20,11 @@
   flex-direction: column;
   gap: 1rem;
   font-weight: bold;
+}
+.activitiesContainer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .activity {
@@ -61,17 +66,20 @@
   border-radius: 1rem;
   font-family: "Unbounded", sans-serif;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .delButton {
   color: red;
   border: 2px solid red;
   background-color: white;
+  cursor: pointer;
 }
 
 .startButton {
   background-color: #adff00;
   border: 2px solid black;
+  cursor: pointer;
 }
 
 .hisButton {
@@ -79,6 +87,7 @@
   border: 2px solid black;
   color: white;
   font-weight: normal !important;
+  cursor: pointer;
 }
 
 .flex {

@@ -29,6 +29,18 @@ const WorkoutSession = (props) => {
     setIsRunning(false);
   };
 
+  
+  const calculateCaloriesBurned = (durationInMinutes) => {
+    // Vous pouvez ajuster ce coefficient en fonction de l'intensité de l'exercice
+    const caloriesPerMinute = 2;
+  
+    // Calcul des calories brûlées en fonction de la durée
+    const caloriesBurned = durationInMinutes * caloriesPerMinute;
+  
+    return caloriesBurned;
+  };
+
+  const duration = Math.floor((timeElapsed % 3600) / 60);
   const handleEndWorkout = () => {
     handleStopwatch();
     props.changeView("Library");
@@ -39,8 +51,9 @@ const WorkoutSession = (props) => {
     const data = {
       id: crypto.randomUUID(),
       workoutId: props.workoutId,
-      duration: Math.floor((timeElapsed % 3600) / 60),
+      duration: duration,
       sets: sets,
+      calories: calculateCaloriesBurned(duration),
       date: `${new Date().getDate()}/${
         new Date().getMonth() + 1
       }/${new Date().getFullYear()}`,
@@ -88,6 +101,7 @@ const WorkoutSession = (props) => {
           <div className={styles.activity} key={itm.id}>
             <p className={styles.number}>{itm.reps}</p>
             <p>{itm.name}</p>
+            <img src={itm.image} alt="sport" width={250}  height={250}/>
           </div>
         ))}
       </div>
@@ -105,7 +119,7 @@ const WorkoutSession = (props) => {
           setEndModal(true);
         }}
       >
-        Terminer la séance d'entrainement
+        Terminer la séance d'entrainement :
       </button>
       <button
         className={styles.next}
