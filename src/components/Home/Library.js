@@ -19,7 +19,7 @@ const Library = (props) => {
            saisir un entrainement
          </button>
          </div>
-         <h1 style={{marginLeft:"250px", marginRight:"250px", marginTop:"150px"}}>Pas d'entrainement trouvé</h1>
+         <h1 style={{marginLeft:"5px", fontSize:"20px", marginRight:"10px", marginTop:"150px"}}>Pas d'entrainement trouvé</h1>
      </div>
     )
 
